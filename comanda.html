@@ -13,7 +13,7 @@
     <title>WOK UP</title>
 
     <!-- Custom styles for this template -->
-    <link href="static/stylesheet.css" rel="stylesheet" />
+    <link href="{{ 'static/stylesheet.css' | relative_url }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -25,11 +25,11 @@
 <body>
 
     <div class="topnav" id="myTopnav">
-        <a href="/index.html" class="active">WOK UP</a>
-        <a href="comanda.html">Comandă</a>
-        <a href="/despreNoi.html">Despre noi</a>
-        <a href="/meniu.html">Meniu</a>
-        <a href="/prezentareaFirmei.html">Prezentarea firmei</a>
+        <a href="{{ '/' | relative_url }}" class="active">WOK UP</a>
+        <a href="{{ 'comanda.html' | relative_url }}">Comandă</a>
+        <a href="{{ '/despreNoi.html' | relative_url }}">Despre noi</a>
+        <a href="{{ '/meniu.html' | relative_url }}">Meniu</a>
+        <a href="{{ '/prezentareaFirmei.html' | relative_url }}">Prezentarea firmei</a>
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div><br><br>
 
@@ -357,19 +357,19 @@
     <!--footer-->
     <footer class="mb-5 small text-center footer">
         <div class="contact-info">
-            <img class="contact-info-img" src="/static/phone-icon.png" alt="Phone Icon">
+            <img class="contact-info-img" src="{{ '/static/phone-icon.png' | relative_url }}" alt="Phone Icon">
             <span>123-456-7890</span>
         </div>
         <div class="second-row">
-            <img class="second-row-img" src="/static/mailLogo.png" alt="Second Logo">
+            <img class="second-row-img" src="{{ '/static/mailLogo.png' | relative_url }}" alt="Second Logo">
             <span>f.e.wokups.r.l@gmail.com</span>
         </div>
         <div class="third-row">
-            <img class="third-row-img" src="/static/instagramLogo.png" alt="Instagram Logo">
+            <img class="third-row-img" src="{{ '/static/instagramLogo.png' | relative_url }}" alt="Instagram Logo">
             <span>@wok.up_11</span>
         </div>
         <div class="fourth-row">
-            <img class="fourth-row-img" src="/static/locationIcon.png" alt="Location Logo">
+            <img class="fourth-row-img" src="{{ '/static/locationIcon.png' | relative_url }}" alt="Location Logo">
             <span>Oradea. Calea Armatei Române nr 1F.</span>
         </div>
     </footer>
