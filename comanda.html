@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="description" content="The official website for F.E WOK UP S.R.L" />
+    <meta name="author" content="Bacancios Damar" />
+    <title>WOK UP</title>
+
+    <!-- Custom styles for this template -->
+    <link href="static/stylesheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color:  #f5c7d1; /* Replace #yourcolor with your desired color code */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="/index.html" class="active">WOK UP</a>
+        <a href="comanda.html">Comandă</a>
+        <a href="/despreNoi.html">Despre noi</a>
+        <a href="/meniu.html">Meniu</a>
+        <a href="/prezentareaFirmei.html">Prezentarea firmei</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div><br><br>
+
+    <!--command page goes here!-->
+    <div id="menuWrapper">
+        <div id="menuItems">
+            <label> Vă rugăm să introduceți datele necesare mai jos. </label><br><br>
+            
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <span class="toggle-text">Cu livrare</span>
+                    <input class="toggle-switch-check" name="toggleSwitchRadio1" type="radio" value="option1" onchange="showAddressFields()"/>
+                    <span aria-hidden="true" class="toggle-switch-bar">
+                        <span class="toggle-switch-handle"></span>
+                    </span>
+                </label>
+            </div>
+            
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <span class="toggle-text">Cu ridicare</span>
+                    <input class="toggle-switch-check" name="toggleSwitchRadio1" type="radio" value="option2" onchange="hideAddressFields()"/>
+                    <span aria-hidden="true" class="toggle-switch-bar">
+                        <span class="toggle-switch-handle"></span>
+                    </span>
+                </label>
+            </div>
+            
+            <form action="/action_page.php" id="addressForm">
+                <label for="address">Adresa:</label>
+                <input type="text" id="address" name="address"><br><br>
+                <label for="name">Numele dvs. :</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="card">Card credit/debit (lăsând această opțiune goală înseamnă plată fizică):</label>
+                <input type="text" id="card" name="card"><br><br>
+            </form>
+            <br>
+            <label>cafea</label>
+
+            <select name="cafea" id="cafea" onchange="showNumarCafea()">
+                <option value="">nimic ales</option>
+                <option value="cafea">caramel macchiato</option>
+                <option value="cafea">chocolate macchiato</option>
+                <option value="cafea">caramel frappuccino</option>
+                <option value="cafea">toffee nut latte</option>
+                <option value="cafea">iced brown sugar espresso</option>
+                <option value="cafea">iced caffe latte</option>
+                <option value="cafea">espresso</option>
+                <option value="cafea">americano</option>
+                <option value="cafea">cappuccino</option>
+                <option value="cafea">cappuccino caramel</option>
+                <option value="cafea">caffe latte</option>
+                <option value="cafea">caffe latte flavor</option>
+                <option value="cafea">irish caffe</option>
+                <option value="cafea">frappe</option>
+                <option value="cafea">latte macchiato</option>
+                <option value="cafea">hot chocolate</option>
+                <option value="cafea">hot flavoured tea</option>
+            </select>
+            
+            <label id="numarCafeaLabel" style="display: none;">număr cafea</label>
+            <select name="numar cafea" id="numarCafea" style="display: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br><br>
+
+            <label>băuturi alcool</label>
+            <select name="alcool" id="alcool" onchange="showNumarAlcoolice()">
+                <option value="">nimic ales</option>
+                <option value="alcool">whisky</option>
+                <option value="alcool">vodka</option>
+                <option value="alcool">tequila</option>
+                <option value="alcool">gin tonic</option>
+                <option value="alcool">vin alb</option>
+                <option value="alcool">vin rosu</option>
+                <option value="alcool">proseco</option>
+                <option value="alcool">sex on the beach</option>
+                <option value="alcool">mojito</option>
+                <option value="alcool">hugo</option>
+                <option value="alcool">coba libre</option>
+                <option value="alcool">piña colada</option>
+                <option value="alcool">bere tuborg</option>
+            </select>
+
+            <label id="numarAlcooliceLabel" style="display: none;">număr alcool</label>
+            <select name="numar alcool" id="numarAlcool" style="display: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br><br>
+
+            <label>băuturi non-alcool</label>
+                <select name="non-alcool" id="non-alcool" onchange="showNumarNonAlcoolice()">
+                <option value="">nimic ales</option>
+                <option value="non-alcool">limonada</option>
+                <option value="non-alcool">smoothie</option>
+                <option value="non-alcool">fresh</option>
+                <option value="non-alcool">milkshake</option>
+                <option value="non-alcool">sex on the beach</option>
+                <option value="non-alcool">martini florale</option>
+            </select>
+
+            <label id="numarNonAlcooliceLabel" style="display: none;">număr non-alcool</label>
+            <select name="numar non-alcool" id="numarNonAlcool" style="display: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br><br>
+            
+            <label>băuturi răcoritoare</label>
+            <select name="racoritoare" id="racoritoare" onchange="showNumarRacoritoare()">
+                <option value="">nimic ales</option>
+                <option value="racoritoare">apa naturala dorna 330 ml</option>
+                <option value="racoritoare">apa minerala dorna 330 ml</option>
+                <option value="racoritoare">apa naturala dorna 750 ml</option>
+                <option value="racoritoare">apa minerala dorna 750 ml</option>
+                <option value="racoritoare">coca cola</option>
+                <option value="racoritoare">fanta</option>
+                <option value="racoritoare">fuze tea</option>
+                <option value="racoritoare">sprite</option>
+                <option value="racoritoare">cappy</option>
+            </select>
+            
+            <label id="numarRacoritoareLabel" style="display: none;">număr racoritoare</label>
+            <select name="numar racoritoare" id="numarRacoritoare" style="display: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br><br>
+
+            <label>cakes</label>
+            <select name="cakes" id="cakes" onchange="showNumarCakes()">
+                <option value="">nimic ales</option>
+                <option value="cakes">tort cu morcovi si crema de branza</option>
+                <option value="cakes">tort cu crema de branza si capsuni</option>
+                <option value="cakes">prajitura vegana cu mere</option>
+                <option value="cakes">clatite americane /3 buc.</option>
+                <option value="cakes">cheese cake</option>
+                <option value="cakes">lava cake</option>
+                <option value="cakes">tiramisu</option>
+                <option value="cakes">macaron</option>
+                <option value="cakes">briose</option>
+                <option value="cakes">pavlona</option>
+                <option value="cakes">fursecuri</option>
+                <option value="cakes">croissant</option>
+                <option value="cakes">prajitura oreo</option>
+                <option value="cakes">prajitura kinder</option>
+                <option value="cakes">prajitura raffaello</option>
+                <option value="cakes">albina</option>
+                <option value="cakes">cremes</option>
+            </select>
+
+            <label id="numarCakesLabel" style="display: none;">număr cakes</label>
+            <select name="numar cakes" id="numarCakes" style="display: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br><br>
+
+            <label>sandwichuri</label>
+            <select name="sandwichuri" id="sandwichuri" onchange="showNumarSandwichuri()">
+                <option value="">nimic ales</option>
+                <option value="sandwichuri">focaccia mozzarella 15cm</option>
+                <option value="sandwichuri">cheesy bbq bacon 15cm</option>
+                <option value="sandwichuri">wok up sandwish 30cm</option>
+                <option value="sandwichuri">quesadilla de pui</option>
+                <option value="sandwichuri">spicy veggie 30cm</option>
+                <option value="sandwichuri">ou&sunca 15cm</option>
+                <option value="sandwichuri">ton 15cm</option>
+            </select>
+            
+            <label id="numarSandwichuriLabel" style="display: none;">număr sandwichuri</label>
+            <select name="numar sandwichuri" id="numarSandwichuri" style="display: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br><br>
+            <label>Prețurile sunt afișate pe pagina meniu.</label>
+            <br><br>
+            <button type="button" class="button1" onclick="alert('Comanda trimisă cu succes!')">Comandă</button>
+            <br>
+        </div>
+    </div>
+    <br><br><br>
+
+    
+    <script>
+        function showNumarCafea() {
+            var cafeaSelect = document.getElementById("cafea");
+            var numarCafeaLabel = document.getElementById("numarCafeaLabel");
+            var numarCafeaSelect = document.getElementById("numarCafea");
+    
+            if (cafeaSelect.value === "cafea") {
+                numarCafeaLabel.style.display = "inline";
+                numarCafeaSelect.style.display = "inline";
+            } else {
+                numarCafeaLabel.style.display = "none";
+                numarCafeaSelect.style.display = "none";
+            }
+        }
+
+        function showNumarAlcoolice() {
+            var alcoolSelect = document.getElementById("alcool");
+            var numarAlcooliceLabel = document.getElementById("numarAlcooliceLabel");
+            var numarAlcoolSelect = document.getElementById("numarAlcool");
+
+            if (alcoolSelect.value === "alcool") {
+                numarAlcooliceLabel.style.display = "inline";
+                numarAlcoolSelect.style.display = "inline";
+            } else {
+                numarAlcooliceLabel.style.display = "none";
+                numarAlcoolSelect.style.display = "none";
+            }
+        }
+        
+        function showNumarNonAlcoolice() {
+            var nonAlcoolSelect = document.getElementById("non-alcool"); // corrected
+            var numarNonAlcooliceLabel = document.getElementById("numarNonAlcooliceLabel");
+            var numarNonAlcoolSelect = document.getElementById("numarNonAlcool");
+
+            if (nonAlcoolSelect.value === "non-alcool") { // corrected
+                numarNonAlcooliceLabel.style.display = "inline";
+                numarNonAlcoolSelect.style.display = "inline";
+            } else {
+                numarNonAlcooliceLabel.style.display = "none";
+                numarNonAlcoolSelect.style.display = "none";
+            }
+        }
+
+        function showNumarRacoritoare() {
+            var racoritoareSelect = document.getElementById("racoritoare");
+            var numarRacoritoareLabel = document.getElementById("numarRacoritoareLabel");
+            var numarRacoritoareSelect = document.getElementById("numarRacoritoare");
+
+            if (racoritoareSelect.value === "racoritoare") {
+                numarRacoritoareLabel.style.display = "inline";
+                numarRacoritoareSelect.style.display = "inline";
+            } else {
+                numarRacoritoareLabel.style.display = "none";
+                numarRacoritoareSelect.style.display = "none";
+            }
+        }
+
+        function showNumarCakes() {
+            var cakesSelect = document.getElementById("cakes");
+            var numarCakesLabel = document.getElementById("numarCakesLabel");
+            var numarCakesSelect = document.getElementById("numarCakes");
+
+            if (cakesSelect.value === "cakes") {
+                numarCakesLabel.style.display = "inline";
+                numarCakesSelect.style.display = "inline";
+            } else {
+                numarCakesLabel.style.display = "none";
+                numarCakesSelect.style.display = "none";
+            }
+        }
+
+        function showNumarSandwichuri() {
+            var sandwichuriSelect = document.getElementById("sandwichuri");
+            var numarSandwichuriLabel = document.getElementById("numarSandwichuriLabel");
+            var numarSandwichuriSelect = document.getElementById("numarSandwichuri");
+
+            if (sandwichuriSelect.value === "sandwichuri") {
+                numarSandwichuriLabel.style.display = "inline";
+                numarSandwichuriSelect.style.display = "inline";
+            } else {
+                numarSandwichuriLabel.style.display = "none";
+                numarSandwichuriSelect.style.display = "none";
+            }
+        }
+
+        function showAddressFields() {
+            document.getElementById("addressForm").style.display = "block";
+        }
+
+        function hideAddressFields() {
+        document.getElementById("addressForm").style.display = "none";
+}
+
+    </script>
+
+    <!--footer-->
+    <footer class="mb-5 small text-center footer">
+        <div class="contact-info">
+            <img class="contact-info-img" src="/static/phone-icon.png" alt="Phone Icon">
+            <span>123-456-7890</span>
+        </div>
+        <div class="second-row">
+            <img class="second-row-img" src="/static/mailLogo.png" alt="Second Logo">
+            <span>f.e.wokups.r.l@gmail.com</span>
+        </div>
+        <div class="third-row">
+            <img class="third-row-img" src="/static/instagramLogo.png" alt="Instagram Logo">
+            <span>@wok.up_11</span>
+        </div>
+        <div class="fourth-row">
+            <img class="fourth-row-img" src="/static/locationIcon.png" alt="Location Logo">
+            <span>Oradea. Calea Armatei Române nr 1F.</span>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+
+</body>
+</html>

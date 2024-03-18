@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="description" content="The official website for F.E WOK UP S.R.L" />
+    <meta name="author" content="Bacancios Damar" />
+    <title>WOK UP</title>
+
+    <!-- Custom styles for this template -->
+    <link href="static/stylesheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color:  #f5c7d1; /* Replace #yourcolor with your desired color code */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="/index.html" class="active">WOK UP</a>
+        <a href="comanda.html">Comandă</a>
+        <a href="/despreNoi.html">Despre noi</a>
+        <a href="/meniu.html">Meniu</a>
+        <a href="/prezentareaFirmei.html">Prezentarea firmei</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div class="image-container" id="image-container">
+        <img src="/static/F.E._WOK_UP_S.R.L1.png" alt="Transparent Image" id="current-image">
+    </div>
+    <div id="image-buttons" class="center mt-3">
+        <button class="button button1" onclick="changeImage('prev')">&#8592;</button>
+        <button class="button button1" onclick="changeImage('next')">&#8594;</button>
+    </div><br>
+
+    <div class="mt-5"></div>
+    
+    <script>
+        const images = ["/static/F.E._WOK_UP_S.R.L1.png", "/static/F.E._WOK_UP_S.R.L2.png", "/static/F.E._WOK_UP_S.R.L3.png", "/static/F.E._WOK_UP_S.R.L4.png", "/static/F.E._WOK_UP_S.R.L5.png", "/static/F.E._WOK_UP_S.R.L6.png", "/static/F.E._WOK_UP_S.R.L7.png", "/static/F.E._WOK_UP_S.R.L8.png", "/static/F.E._WOK_UP_S.R.L9.png", "/static/F.E._WOK_UP_S.R.L10.png", "/static/F.E._WOK_UP_S.R.L11.png", "/static/F.E._WOK_UP_S.R.L12.png", "/static/F.E._WOK_UP_S.R.L13.png", "/static/F.E._WOK_UP_S.R.L14.png", "/static/F.E._WOK_UP_S.R.L15.png", "/static/F.E._WOK_UP_S.R.L16.png", "/static/F.E._WOK_UP_S.R.L17.png", "/static/F.E._WOK_UP_S.R.L18.png", "/static/F.E._WOK_UP_S.R.L19.png", "/static/F.E._WOK_UP_S.R.L20.png", "/static/F.E._WOK_UP_S.R.L21.png", "/static/F.E._WOK_UP_S.R.L22.png", "/static/F.E._WOK_UP_S.R.L23.png", ];  // Add your image paths
+        let currentImageIndex = 0;
+
+        function changeImage(direction) {
+            if (direction === 'next') {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            } else if (direction === 'prev') {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            }
+
+            const currentImage = document.getElementById('current-image');
+            currentImage.src = images[currentImageIndex];
+        }
+    </script>
+
+    <footer class="mb-5 small text-center footer">
+        <div class="contact-info">
+            <img class="contact-info-img" src="/static/phone-icon.png" alt="Phone Icon">
+            <span>123-456-7890</span>
+        </div>
+        <div class="second-row">
+            <img class="second-row-img" src="/static/mailLogo.png" alt="Second Logo">
+            <span>f.e.wokups.r.l@gmail.com</span>
+        </div>
+        <div class="third-row">
+            <img class="third-row-img" src="/static/instagramLogo.png" alt="Instagram Logo">
+            <span>@wok.up_11</span>
+        </div>
+        <div class="fourth-row">
+            <img class="fourth-row-img" src="/static/locationIcon.png" alt="Location Logo">
+            <span>Oradea. Calea Armatei Române nr 1F.</span>
+        </div>
+    </footer>  
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+</body>
+</html>
